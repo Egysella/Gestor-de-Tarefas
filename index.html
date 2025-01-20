@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Tarefas</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <section class="container">
+        <h1>Gestão de Tarefas</h1>
+        <p>Organize as suas tarefas diárias</p>
+        <div class="imagens-decorativas">
+            <img src="./assets/imagem/arco_iris.jpg" alt="Imagem Decorativa 1">
+            <img src="./assets/imagem/bloco.jpg" alt="Imagem Decorativa 2">
+            <img src="./assets/imagem/sol.jpg" alt="Imagem Decorativa 3">
+        </div>
+        <h3>Adicione suas Tarefas</h3>
+        <form class="form-tarefa">
+            <input type="text" class="input-tarefa" placeholder="Descrição da tarefa">
+            <select class="select-categoria">
+                <option value="" disabled selected>Selecione uma categoria</option>
+                <option value="Trabalho">Trabalho</option>
+                <option value="Pessoal">Pessoal</option>
+                <option value="Estudo">Estudo</option>
+            </select>
+            <button type="button" class="btn-tarefa">Adicionar Tarefa</button>
+        </form>
+        <h3>Procurar suas Tarefas</h3>
+        <div class="filtros">
+            <select class="filtro-categoria">
+                <option value="">Todas as Categorias</option>
+                <option value="Trabalho">Trabalho</option>
+                <option value="Pessoal">Pessoal</option>
+                <option value="Estudo">Estudo</option>
+            </select>
+            <select class="filtro-status">
+                <option value="">Todos os Status</option>
+                <option value="pendente">Pendentes</option>
+                <option value="concluida">Concluídas</option>
+            </select>
+            <button type="button" class="btn-buscar">Buscar</button>
+        </div>
+    
+        <ul class="tarefas"></ul>
+    </section>
+    
+
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
