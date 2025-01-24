@@ -54,6 +54,7 @@ p {
 .btn-tarefa:hover {
     background-color: #74c1cf;
 }
+
 .imagens-decorativas {
     display: flex;
     justify-content: center;
@@ -68,6 +69,38 @@ p {
     object-fit: cover;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+.adicionar-animacao {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animação para a imagem */
+.animacao-icone {
+    animation: bounceIcon 0.5s ease-in-out;
+}
+
+@keyframes bounceIcon {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 
 .tarefas {
     list-style: none;
@@ -85,16 +118,36 @@ p {
     border-radius: 4px;
     margin-bottom: 10px;
     background-color: #f6f6f6;
+    transition: all 0.3s ease;
 }
 
 .tarefas li.concluida {
     background-color: #d4edda;
     text-decoration: line-through;
     color: #6c757d;
+    opacity: 0.6;
 }
 
 .tarefas li:hover {
     background-color: #ececec;
+}
+
+.tarefas li.removendo {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.tarefas li.adicionando {
+    opacity: 0;
+    transform: scale(0.9);
+    animation: aparecer 0.3s forwards;
+}
+
+@keyframes aparecer {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .apagar, .editar, .concluir {
@@ -105,11 +158,13 @@ p {
     border-radius: 3px;
     cursor: pointer;
     font-size: 0.9rem;
+    transition: background-color 0.3s ease;
 }
 
 .apagar:hover, .editar:hover, .concluir:hover {
     background-color: #f08b8b;
 }
+
 .btn-buscar {
     padding: 10px;
     border: none;
@@ -123,4 +178,74 @@ p {
 
 .btn-buscar:hover {
     background-color: #74c1cf;
+}
+
+
+.mensagem-filtro {
+    font-size: 1rem;
+    color: #6c757d;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.busca-tarefa {
+    padding: 10px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+
+.btn-ordenar {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #a8d5e2;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-ordenar:hover {
+    background-color: #74c1cf;
+}
+
+.icone {
+    width: 20px; 
+    height: 20px;
+    margin-left: 10px; 
+    vertical-align: middle; 
+    cursor: pointer; 
+    transition: transform 0.3s ease; 
+}
+
+.icone:hover {
+    transform: scale(1.2); 
+}
+
+
+.icone.concluir:hover {
+    opacity: 0.8;
+}
+
+.icone.editar:hover {
+    opacity: 0.8;
+}
+
+.icone.apagar:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .tarefas {
+        font-size: 14px;
+    }
+
+    button {
+        padding: 5px;
+    }
 }
